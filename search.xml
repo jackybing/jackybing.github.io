@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[使用Sublime完成Markdown写作]]></title>
+      <url>%2F%2Fblog%2F2016%2F11%2F%E4%BD%BF%E7%94%A8Sublime%E5%AE%8C%E6%88%90Markdown%E5%86%99%E4%BD%9C.html</url>
+      <content type="text"><![CDATA[使用Sublime完成Markdown写作现在使用Markdown进行写作基本已成为主流，尤其在技术流写作派中比较风靡，作为一轻量级的标记语言，只需掌握不超过十个常用的标记符号就可完成日常写作的绝大部分需求，对于技术流来说，大大提高了写作效率，因为无需考虑排版美化问题，在写作过程中也无需过多使用鼠标来“干扰”写作的进程，直接通过技术流最熟练的键盘就可以快速地完成写作过程，那么我们又有什么理由不转向Markdown来进行日常的写作需求呢，再结合自己熟悉的Sublime编辑器，从此写作过程将成为一种享受！下面详细介绍如何使用Sublime完成Markdown写作安装配置过程。 软件安装通过Sublime完成Markdown写作过程，其实就只安装好Sublime编辑器即可，现在最新版本是3.0，直接去其官网选择最新版本下载即可（博主当前使用的版本是3.0版本），然后傻瓜式安装好即可，下面重点是针对Sublime编辑器安装支持Markdown写作的各种插件（package)安装说明，前提是已经完成package control的安装，操作比较简单，打开Sublime编辑器后，使用Ctrl+`或通过View-&gt;Show Console菜单打开命令行，粘贴如下代码,即可完成安装： import urllib.request,os; pf = ‘Package Control.sublime-package’; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), ‘wb’).write(urllib.request.urlopen( ‘http://sublime.wbond.net/‘ + pf.replace(‘ ‘,’%20’)).read()) 安装Markdown Editing插件Markdown Editing插件是一款非常强大、易用、支持Markdown语法高亮的Markdown插件，安装步骤如下： 打开Sublime编辑器，输入Shift+Ctrl+p，然后在弹出窗口输入pcip，选择Package Control:Install Package后输入Markdown Editing,选中enter后就会自动完成插件的安装； 使用Markdown Editing默认配置，文本是居中显示，而且主题色比较丑，建议把当前插件的user settings文件里把如下几个配置项修改成这样： “color_scheme”: “Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme”,//修改主题色 “draw_centered”: false,//设置不居中 “word_wrap”: true,//强制字符换行，比如单词过长时 “wrap_width”: 120,//每行最多120个字就强制换行 安装OnmiMarkupPriviewer插件OnmiMarkupPriviewer插件是一款可以实时预览Markdown语法编写的内容，同样支持渲染代码高亮样式，简单易用，安装步骤如下： 打开Sublime编辑器，输入Shift+Ctrl+p，然后在弹出窗口输入pcip，选择Package Control:Install Package后输入OnmiMarkupPriviewer,选中enter后就会自动完成插件的安装； 修改OnmiMarkupPriviewer插件的默认配置项，如下所列： “extensions”: [“tables”, “strikeout”,”toc”,”fenced_code”, “codehilite”] //支持自动生成目录[TOC]语法 “server_host”: “127.0.0.1”,//可以设置成本机固定的ip，方便多显示端进行展示 常用命令集： Ctrl+Alt+O：打开浏览器实时查看显示效果 Ctrl+Alt+X: Export Markup as HTML把Markup 导出成html格式 Ctrl+Alt+C: Copy Markup as HTML.把Markup 以html格式拷贝，方便粘贴复制 结束语在Sublime编辑器上安装好上面两个插件MarkDown Editing和OnmiMarkupPriviewer后，基本就可以在Sublime上完成Markdown写作过程，真正实现无障碍、所写即所见地创作过程。至于其他相关插件，可根据个人喜好，有选择的安装，对于大部分写作场景都是可以轻松应付，还是那句话，入门容易，精进难，剩下的只能靠自己深入地挖掘和实践呢。由于是使用Markdown写作，还是有必要对其常用的语法进行了解和掌握，大家可以参考Markdown 语法说明(简体中文版)。 转载本站文章请注明作者和出处 Jacky-朱建兵 – zhujianbing.com ，请勿用于任何商业用途]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[个人博客正式开通]]></title>
+      <url>%2F%2Fblog%2F2016%2F11%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%BC%80%E9%80%9A.html</url>
+      <content type="text"></content>
+    </entry>
+
+    
+  
+  
+</search>
