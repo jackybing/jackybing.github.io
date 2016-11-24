@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhujianbing.com/"/>
-  <updated>2016-11-24T04:24:59.227Z</updated>
+  <updated>2016-11-24T04:27:36.604Z</updated>
   <id>http://www.zhujianbing.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.zhujianbing.com//blog/2016/11/hexo-github-pages-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E6%8A%98%E8%85%BE%E8%AE%B0.html"/>
     <id>http://www.zhujianbing.com//blog/2016/11/hexo-github-pages-域名绑定折腾记.html</id>
     <published>2016-11-23T04:28:57.000Z</published>
-    <updated>2016-11-24T04:24:59.227Z</updated>
+    <updated>2016-11-24T04:27:36.604Z</updated>
     
     <content type="html"><![CDATA[<p>通过<strong>github pages</strong>来搭建专属于自己的技术博客是当前比较流行和方便的途径，结合轻量级静态博客框架<strong>hexo</strong>，便可以很快搭建一款属于自己的技术博客，再通过<strong>github</strong>托管自己的静态网站代码，安全、稳定、免费，同时<strong>github pages</strong>支持域名绑定，完成相关绑定后，即可通过域名来访问自己的博客空间。其实，搭建专属于自己的博客平台，好处还是蛮多的，一来可以从头到属实践建站流程，二来可以方便、自由地针对自己的喜好来完成各种定制化功能版块，满足技术流专有的<strong>瞎折腾</strong>欲望。这篇文章主要是记录<a href="http://www.zhujianbing.com">博主</a>整合<strong>hexo</strong>+<strong>github pages</strong>+<strong>域名绑定</strong>的全过程，也给后来人多一个参考、学习、交流的机会。</p>
 <a id="more"></a>
@@ -30,7 +30,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
 <h5 id="hexo-插件安装（建议安装，后面定制化各种插件功能需要使用）"><a href="#hexo-插件安装（建议安装，后面定制化各种插件功能需要使用）" class="headerlink" title="hexo 插件安装（建议安装，后面定制化各种插件功能需要使用）"></a>hexo 插件安装（建议安装，后面定制化各种插件功能需要使用）</h5><p>hexo 插件安装非常简单，常用的插件也就十来种，建议全部安装，后面基于Next主题配制其他第三方插件也需要部分插件才能工作，下面是主要插件的安装命令，直接拷贝运行即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-index --save</div><div class="line">npm install hexo-generator-archive --save</div><div class="line">npm install hexo-generator-category --save</div><div class="line">npm install hexo-generator-tag --save</div><div class="line">npm install hexo-server --save</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">npm install hexo-deployer-heroku --save</div><div class="line">npm install hexo-deployer-rsync --save</div><div class="line">npm install hexo-deployer-openshift --save</div><div class="line">npm install hexo-renderer-marked@0.2 --save</div><div class="line">npm install hexo-renderer-stylus@0.2 --save</div><div class="line">npm install hexo-generator-feed@1 --save</div><div class="line">npm install hexo-generator-sitemap@1 --save</div></pre></td></tr></table></figure>
-<h4 id="hexo-简易使用说明"><a href="#hexo-简易使用说明" class="headerlink" title="hexo 简易使用说明"></a>hexo 简易使用说明</h4><p>在安装好<strong>hexo</strong>及相关插件后，接下来我们就可能通过<strong>hexo</strong>命令来完成博客目录的初始化</p>
+<h3 id="hexo-简易使用说明"><a href="#hexo-简易使用说明" class="headerlink" title="hexo 简易使用说明"></a>hexo 简易使用说明</h3><p>在安装好<strong>hexo</strong>及相关插件后，接下来我们就可能通过<strong>hexo</strong>命令来完成博客目录的初始化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 建立一个博客目录，并初始化博客，hexo为文件夹的名称，本地创建了一名称为hexo目录</div><div class="line">hexo init hexo</div></pre></td></tr></table></figure>
 <p>初始化完成后，进入hexo目录后，能看到如下如下目录结构</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── <span class="built_in">source</span></div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
