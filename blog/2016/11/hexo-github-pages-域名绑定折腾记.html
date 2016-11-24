@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="朱建兵">
+<meta name="description" content="通过github pages来搭建专属于自己的技术博客是当前比较流行和方便的途径，结合轻量级静态博客框架hexo，便可以很快搭建一款属于自己的技术博客，再通过github托管自己的静态网站代码，安全、稳定、免费，同时github pages支持域名绑定，完成相关绑定后，即可通过域名来访问自己的博客空间。其实，搭建专属于自己的博客平台，好处还是蛮多的，一来可以从头到属实践建站流程，二来可以方便、自由">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+github pages+域名绑定折腾记">
 <meta property="og:url" content="http://www.zhujianbing.com/blog/2016/11/hexo-github-pages-域名绑定折腾记.html">
 <meta property="og:site_name" content="Jacky-朱建兵">
-<meta property="og:description" content="朱建兵">
-<meta property="og:updated_time" content="2016-11-23T04:29:43.277Z">
+<meta property="og:description" content="通过github pages来搭建专属于自己的技术博客是当前比较流行和方便的途径，结合轻量级静态博客框架hexo，便可以很快搭建一款属于自己的技术博客，再通过github托管自己的静态网站代码，安全、稳定、免费，同时github pages支持域名绑定，完成相关绑定后，即可通过域名来访问自己的博客空间。其实，搭建专属于自己的博客平台，好处还是蛮多的，一来可以从头到属实践建站流程，二来可以方便、自由">
+<meta property="og:updated_time" content="2016-11-24T04:19:14.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github pages+域名绑定折腾记">
-<meta name="twitter:description" content="朱建兵">
+<meta name="twitter:description" content="通过github pages来搭建专属于自己的技术博客是当前比较流行和方便的途径，结合轻量级静态博客框架hexo，便可以很快搭建一款属于自己的技术博客，再通过github托管自己的静态网站代码，安全、稳定、免费，同时github pages支持域名绑定，完成相关绑定后，即可通过域名来访问自己的博客空间。其实，搭建专属于自己的博客平台，好处还是蛮多的，一来可以从头到属实践建站流程，二来可以方便、自由">
 
 
 
@@ -361,7 +361,76 @@
       
 
       
-        
+        <p>通过<strong>github pages</strong>来搭建专属于自己的技术博客是当前比较流行和方便的途径，结合轻量级静态博客框架<strong>hexo</strong>，便可以很快搭建一款属于自己的技术博客，再通过<strong>github</strong>托管自己的静态网站代码，安全、稳定、免费，同时<strong>github pages</strong>支持域名绑定，完成相关绑定后，即可通过域名来访问自己的博客空间。其实，搭建专属于自己的博客平台，好处还是蛮多的，一来可以从头到属实践建站流程，二来可以方便、自由地针对自己的喜好来完成各种定制化功能版块，满足技术流专有的<strong>瞎折腾</strong>欲望。这篇文章主要是记录<a href="http://www.zhujianbing.com">博主</a>整合<strong>hexo</strong>+<strong>github pages</strong>+<strong>域名绑定</strong>的全过程，也给后来人多一个参考、学习、交流的机会。</p>
+<a id="more"></a>
+<h3 id="hexo安装记"><a href="#hexo安装记" class="headerlink" title="hexo安装记"></a>hexo安装记</h3><p><strong>hexo</strong>是一个简单、轻量、基于<strong>Node.js</strong>的静态博客框架，既然它是基于<strong>Node.js</strong>自然也就需要依赖<strong>Node.js</strong>平台，所以在本地安装好<strong>Node.js</strong>是前提。安装很简单，无论是windows系统还是linux系统，通过其<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>下载对应的版本安装即可（ps:由于墙的存在，下载速度比较慢，建议大家去其他资源网站下载对应版本），考虑到平时自己平时写博客主要是在windows环境下完成，自然就决定在windows环境下搭建好各种所需要软件信息呢，下文的所有安装、配置操作说明都是基于<strong>win7</strong>且已提前完成<strong>Node.js</strong>安装，至于<strong>linux</strong>系统环境的搭建基本类似，在此就不在赘述，请自行谷歌、百度。</p>
+<h4 id="github-pages-respos创建"><a href="#github-pages-respos创建" class="headerlink" title="github pages respos创建"></a>github pages respos创建</h4><p>创建github pages respos时，和创建普通的respos过程没有区别，唯一需要注意的是respos名字是固定的：yourname.github.io，名字是注册时填写的用户名，过程很简单，在github右上方选择respository -&gt; 输入respos名称yourname.github.io -&gt; 点击完成即可。完成respos创建是为了将博客代码托管到当前respos中，通过下文介绍的hexo deploy命令方便快捷地完成博文的上传更新操作。</p>
+<h4 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h4><h5 id="hexo-安装"><a href="#hexo-安装" class="headerlink" title="hexo 安装"></a>hexo 安装</h5><p>完成<strong>Node.js</strong>安装前提下，<strong>hexo</strong>的安装很简单，打开<strong>Node.js</strong>命令窗口，输入下面几行命令即可搞定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
+<h5 id="hexo-插件安装（建议安装，后面定制化各种插件功能需要使用）"><a href="#hexo-插件安装（建议安装，后面定制化各种插件功能需要使用）" class="headerlink" title="hexo 插件安装（建议安装，后面定制化各种插件功能需要使用）"></a>hexo 插件安装（建议安装，后面定制化各种插件功能需要使用）</h5><p>hexo 插件安装非常简单，常用的插件也就十来种，建议全部安装，后面基于Next主题配制其他第三方插件也需要部分插件才能工作，下面是主要插件的安装命令，直接拷贝运行即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-index --save</div><div class="line">npm install hexo-generator-archive --save</div><div class="line">npm install hexo-generator-category --save</div><div class="line">npm install hexo-generator-tag --save</div><div class="line">npm install hexo-server --save</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">npm install hexo-deployer-heroku --save</div><div class="line">npm install hexo-deployer-rsync --save</div><div class="line">npm install hexo-deployer-openshift --save</div><div class="line">npm install hexo-renderer-marked@0.2 --save</div><div class="line">npm install hexo-renderer-stylus@0.2 --save</div><div class="line">npm install hexo-generator-feed@1 --save</div><div class="line">npm install hexo-generator-sitemap@1 --save</div></pre></td></tr></table></figure>
+<h5 id="hexo-简易使用说明"><a href="#hexo-简易使用说明" class="headerlink" title="hexo 简易使用说明"></a>hexo 简易使用说明</h5><p>在安装好<strong>hexo</strong>及相关插件后，接下来我们就可能通过<strong>hexo</strong>命令来完成博客目录的初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 建立一个博客目录，并初始化博客，hexo为文件夹的名称，本地创建了一名称为hexo目录</div><div class="line">hexo init hexo</div></pre></td></tr></table></figure>
+<p>初始化完成后，进入hexo目录后，能看到如下如下目录结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── <span class="built_in">source</span></div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+<p>上面每个目录和文件的具体说明请大家参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">hexo-建站</a>，这里就不再啰嗦呢。初始化后的博客默认会下载并使用landscape 主题（theme),在themes目录下有landscape 主题目录，到这里，大家就可以启动hexo，查看博客效果呢，在<strong>Node.js</strong>命令行工具下，进入hexo目录下，输入如下几行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean //删除工具，主要是完成对上次构建产生的静态资源（html等相关文件）的清楚</div><div class="line">hexo generate //基于最新的资源构建博客的各种静态资源（html等相关文件），命令可以简化为:hexo g</div><div class="line">hexo serve //启动服务，以便在本地通过：http://localhost:4000/来查看博客界面效果</div></pre></td></tr></table></figure>
+<p>启动成功后，通过在浏览器的地址栏中输入<a href="http://localhost:4000/即可查看到博客界面效果呢。__" target="_blank" rel="external">http://localhost:4000/即可查看到博客界面效果呢。__</a></p>
+<h5 id="hexo-主题安装"><a href="#hexo-主题安装" class="headerlink" title="hexo 主题安装"></a>hexo 主题安装</h5><p>hexo一个便捷之处在于可以通过配置使用不用的主题，网上有很多开源的hexo主题，大家可以自动搜索浏览。hexo换主题很简单，把下载好的主题目录放置站点目录下的themes目录下并修改站点配置文件hexo/_config.yml里的theme配置项值为主题目录的名称即可。 由于hexo默认使用的主题样式不符合我的审美观，所以决定使用流行的<strong>Next</strong>主题，大家可以直接到其<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">github官网</a>下载最新版本，无论是clone还是download方式都可，下载到本地解压后将目录名称修改成next，然后再将此目录放置到hexo/themes目录下，同时修改hexo/_config.yml文件里的如下配置项信息：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next //把主题从landscape修改成为next</div></pre></td></tr></table></figure>
+<p>完成后重启即可看到引用新主题的博客样式效果呢。<strong>Next</strong>主题很强大，配置灵活，可以集成多种第三方插件，比如搜索、统计、评论、分享等插件，具体配置请参考其<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">官网</a>，这里就不再啰嗦呢。</p>
+<h4 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h4><p>安装<strong>git</strong>的目的是为了后期可以方便地将最新编辑完成的博文上传到github中，前提是安装了我们上面建议安装的hexo git 插件，修改站点配置文件hexo/_config.yml的deploy配置项：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:jackybing/jackybing.github.io.git //jackybing是github帐号名</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>然后直接通过如下命令就可以完成代码的提交工作，方便、快捷：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy //将代码提交到github 仓库，可以简写为：hexo d</div></pre></td></tr></table></figure>
+<p>安装<strong>git</strong>的操作就自行百度之，这里就不再重复了，过程很简单，下载安装包（windows版本）-&gt;安装-&gt;生成ssh key-&gt;把公钥拷贝到github帐号下ssh keys集合即可。</p>
+<h4 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h4><p>如果不想直接通过yourname.github.io来访问托管在github上的博客的话，需要自己单独购买注册域名，然后把解析设置好，同时在站点根目录下的source目录下新建名为<strong>CNAME</strong>文件，里面就是我们购买注册好的域名，<strong>注意</strong>：域名不要带<strong>http</strong>,直接填写域名，如:<strong>www.zhujianbing.com</strong>,同时将站点配置文件的<strong>url</strong>项值设置为带<strong>http</strong>开头的域名，如：<strong><a href="http://www.zhujianbing.com">http://www.zhujianbing.com</a></strong>即可。</p>
+<h5 id="域名购买和解析"><a href="#域名购买和解析" class="headerlink" title="域名购买和解析"></a>域名购买和解析</h5><p>域名购买可以通过DNSPod或者万网进行购买，由于博主在购买时万网有优惠活动，所以就果断在万网注册购买了自己的专属域名：<strong>zhujianbing.com</strong>,在万网购买域名后，修改<strong>DNS*服务器：</strong>f1g1ns1.dnspod.net<strong>和</strong>f1g1ns2.dnspod.net<strong>，然后去</strong>DNSPod**注册个帐号，添加域名和记录。通过cmd命令行窗口，ping yourname.github.com,即可获取到github pages的专属ip（gp IP),然后添加A记录类型和CNAME类型即可：</p>
+<table>
+<thead>
+<tr>
+<th>主机记录</th>
+<th style="text-align:center">记录类型</th>
+<th style="text-align:right">线路</th>
+<th style="text-align:right">记录值     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@</td>
+<td style="text-align:center">A</td>
+<td style="text-align:right">默认</td>
+<td style="text-align:right">gh IP       </td>
+</tr>
+<tr>
+<td>www</td>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:right">默认</td>
+<td style="text-align:right">yourname.github.ip</td>
+</tr>
+</tbody>
+</table>
+<p>具体可参考<a href="http://www.jianshu.com/p/1d427e888dda" target="_blank" rel="external">【Hexo+Github】域名和github绑定的问题</a>此文章内容，比较简单，就不再赘述。</p>
+<h5 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h5><p>完成域名购买和解析后，需要在站点目录的source目录下新建名为<strong>CNAME</strong>文件，内容就是我们购买注册好的域名，<strong>注意</strong>：域名不要带<strong>http</strong>,直接填写域名，如:<strong>www.zhujianbing.com</strong>,同时将站点配置文件的<strong>url</strong>项值设置为带<strong>http</strong>开关的域名，如：<strong><a href="http://www.zhujianbing.com">http://www.zhujianbing.com</a></strong>即可。最后重新clean -&gt;generate -&gt;deploy操作后，正常情况下，在半小时内域名解析即可完成，然后就可通过输入自己<a href="http://www.zhujianbing.com">专属域名</a>来访问个人博客呢。</p>
+<p>到这一步，我们的hexo+github pages+域名绑定流程也算是正式完成呢，之间会遇到各种配置的小问题，尤其是Next相关的，通过查看其其<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">github官网</a>，再结合<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo 官网</a>，应该不会什么解决不了的大BUG问题呢！如果需要帮助，请在评论区留言，博主会在第一时间给予解答。</p>
+<h4 id="Next-主题配置”坑”"><a href="#Next-主题配置”坑”" class="headerlink" title="Next 主题配置”坑”"></a>Next 主题配置”坑”</h4><ul>
+<li><p>配置404.html界面：使用腾讯的404界面，其中homePageUrl项必须以<strong>http</strong>开头，不然无法返回主页</p>
+<blockquote>
+<p>homePageUrl=”<a href="http://www.zhujianbing.com">http://www.zhujianbing.com</a>“ //必须以http开头，不然无法解析成正确的主页地址</p>
+</blockquote>
+</li>
+<li><p>修改Next默认字体和字号</p>
+<p>  修改主题目录下的<strong>themes\next\source\css\_variables\custome.styl</strong>文件，添加下面代码，主要是设置自己想要的字体：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 标题，修改成你期望的字体族</div><div class="line"><span class="variable">$font</span>-family-headings = Georgia, sans</div><div class="line"></div><div class="line">// 修改成你期望的字体族</div><div class="line"><span class="variable">$font</span>-family-base = <span class="string">"Microsoft YaHei"</span>, Verdana, sans-serif</div><div class="line"></div><div class="line">// 代码字体</div><div class="line"><span class="variable">$code</span>-font-family = <span class="string">"Input Mono"</span>, <span class="string">"PT Mono"</span>, Consolas, Monaco, Menlo, monospace</div><div class="line"></div><div class="line">// 正文字体的大小</div><div class="line"><span class="variable">$font</span>-size-base = 16px</div><div class="line"></div><div class="line">// 代码字体的大小</div><div class="line"><span class="variable">$code</span>-font-size = 13px</div></pre></td></tr></table></figure>
+</li>
+<li><p>待续…</p>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>其实，<strong>hexo</strong>+<strong>github pages</strong>+<strong>域名绑定</strong>配置过程并不复杂，只有稍微具备些技术功能+搜索能力基本上都可以搞定，而<strong>Next</strong>主题的应用配置根据其官网说明，也都是依样画葫芦，没什么难度。对于有DIY欲的同学来说，如果想手工修改主题模式，那就必须具备些网页开发的基础呢！其实个人博客样式并不重要，重要的是里面的内容质量，唯有产生高价值的内容才会有较高的访问率，也才能达到我们写博客的目的：<strong>既方便自己加深知识的理解又给别人更多的参考交流机会</strong>。</p>
+<blockquote>
+<p>转载本站文章请注明作者和出处 Jacky-朱建兵 – zhujianbing.com ，请勿用于任何商业用途</p>
+</blockquote>
+
       
     </div>
 
@@ -493,7 +562,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -560,7 +629,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装记"><span class="nav-number">1.</span> <span class="nav-text">hexo安装记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github-pages-respos创建"><span class="nav-number">1.1.</span> <span class="nav-text">github pages respos创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo安装"><span class="nav-number">1.2.</span> <span class="nav-text">hexo安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo-安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">hexo 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo-插件安装（建议安装，后面定制化各种插件功能需要使用）"><span class="nav-number">1.2.2.</span> <span class="nav-text">hexo 插件安装（建议安装，后面定制化各种插件功能需要使用）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo-简易使用说明"><span class="nav-number">1.2.3.</span> <span class="nav-text">hexo 简易使用说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo-主题安装"><span class="nav-number">1.2.4.</span> <span class="nav-text">hexo 主题安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git安装"><span class="nav-number">1.3.</span> <span class="nav-text">git安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名绑定"><span class="nav-number">1.4.</span> <span class="nav-text">域名绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#域名购买和解析"><span class="nav-number">1.4.1.</span> <span class="nav-text">域名购买和解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#域名配置"><span class="nav-number">1.4.2.</span> <span class="nav-text">域名配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-主题配置”坑”"><span class="nav-number">1.5.</span> <span class="nav-text">Next 主题配置”坑”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
